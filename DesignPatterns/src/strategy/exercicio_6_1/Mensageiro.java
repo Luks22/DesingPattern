@@ -22,6 +22,14 @@ public class Mensageiro {
 		break;
 		case 4: msg = new MensagemDaQuarta();
 		break;
+		case 5: msg = new MensagemDaQuinta();
+		break;
+		case 6: msg = new MensagemDaSexta();
+		break;
+		case 7: msg = new MensagemDeSabado();
+		break;
+		case 1: msg = new MensagemDeDomingo();
+		break;
 		default: msg = new SemMensagem();
 		}
 		

@@ -4,7 +4,7 @@ public class MensagemDaTerca implements MensagemDoDia {
 
 	@Override
 	public String mensagem() {
-		return "Hoje é terça";
+		return "Hoje é terça-feira, melhor do que segunda";
 	}
 
 }
