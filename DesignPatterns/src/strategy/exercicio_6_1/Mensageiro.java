@@ -15,6 +15,7 @@ public class Mensageiro {
 		
 		MensagemDoDia msg;
 		
+		
 		switch(diaDaSemana) {
 		case 2: msg = new MensagemDaSegunda();
 		break;

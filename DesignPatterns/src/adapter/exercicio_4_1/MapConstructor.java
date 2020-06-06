@@ -1,38 +1,48 @@
 package adapter.exercicio_4_1;
 
+import java.util.HashMap;
 import java.util.Map;
 
-public class MapConstructor {
+public class MapConstructor implements MapAdapter{
 	
-	private Map<Object, Object> map;
+	private Map map;
 	
 	public MapConstructor(Object[][] tipos) {
-		
-		assossiarChaveValor(tipos);
-	}
-	
-	
-	private void assossiarChaveValor(Object[][] types) {
-		int count = 0;
-		Object chave = null;
-		Object valor = null;
-		
-		for(int i = 0; i < types.length; i++) {
-			for(int j = 0; j < types[i].length; j++) {
-				chave = types[i][j];
-				
-				if(count > 0) {
-					valor = types[i][j];
-					count = 0;
-				}
-			}
-			
-			count++;
-		}
-		
-		this.map = (Map<Object, Object>) map.put(chave, valor);
-		
+		this.map = new HashMap();
+		mapAtributes(tipos);
 	}
 
+
+	@Override
+	public void mapAtributes(Object[][] tipos) {
+		int count = 0;
+		Object[] chave = new Object[tipos[0].length];
+		Object[] valor = new Object[tipos[0].length];
+		
+		for(int i = 0; i < tipos.length; i++) {
+			for(int j = 0; j < tipos[i].length; j++) {
+				if(count > 0) {
+					valor[j] = tipos[i][j];
+				}else {
+					chave[j] = tipos[i][j];
+				}
+			}
+			count = 0;
+		}
+		
+		for(int i = 0; i<chave.length;i++) {
+			this.map.put(chave[i], valor[i]);
+		}
+	}
+
+
+	public Map getMap() {
+		return map;
+	}
+
+
+	public void setMap(Map map) {
+		this.map = map;
+	}
 	
 }
