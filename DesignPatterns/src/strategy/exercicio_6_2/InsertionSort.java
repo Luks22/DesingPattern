@@ -12,6 +12,7 @@ public class InsertionSort implements Ordenacao {
 			}
 			array[i + 1] = x;
 		}
+		long tempoDepois = System.currentTimeMillis();
 		
 		System.out.println("InsertionSort");
 		return array;

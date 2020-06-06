@@ -13,7 +13,7 @@ public class BubbleSort implements Ordenacao {
 				}
 			}
 		}
-		
+		long tempoDepois = System.currentTimeMillis();
 		System.out.println("BubbleSort");
 		return array;
 	}
